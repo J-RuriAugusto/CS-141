@@ -122,3 +122,24 @@ class SyntaxChecker {
         return input;
     }
 }
+
+// # stage 0 check datatype
+//     # stage 1 check variable name, if variable name, store in declared_variables[] or some array to store declared variables
+//     # stage 2 check ff
+// 	#     = go to stage 3
+// 	#     , go to stage 1
+//     # stage 3 check for value or if variable, check if declared already, then check the ff
+//     #     , go to stage 1
+//     #     else return False
+//     datatypes = ['int', 'char', 'float', 'double']
+//     stage = 0
+//     for i, token in enumerate(tokens):
+//         if stage == 0:
+//             if token not in datatypes:
+//                 return False
+//             stage = 1
+//         elif stage == 1:
+//             if not token.isidentifier():
+//                 return False
+//             stage = 2
+//         # elif stage == 2:
