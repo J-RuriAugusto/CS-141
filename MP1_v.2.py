@@ -26,42 +26,36 @@ def tokenize_input(string):
 
 def isVariableDeclaration(tokens):
     datatypes = ["int", "char", "float", "double", "void"]
-    i = 0
     stage = 0
 
-    for i, token in enumerate(tokens):
+    for token in enumerate(tokens):
         if stage == 0:
-            if token[i] not in datatypes:
+            if token not in datatypes:
                 return False
             stage = 1
         elif stage == 1:
-            if not token[i].isidentifier() and token == "-":
+            if not token.isidentifier():
                 return False
             stage = 2
         elif stage == 2:
-            if token[i] != ",":
+            if token == ",":
+                stage = 1
+            if token == "=":
+                stage = 3
+            else:
                 return False
-            stage == 1
-            if token[i] != "=":
-                return False
-            stage == 3
         elif stage == 3:
-            if token[i].isalpha():
+            if token == "'":
+                if (token.isalpha() and (token.next() == "'")):
+                    stage = 4
+                if token.float() or token.isalnum():
+                    stage = 4
+            else:
                 return False
-            if token[i] == "'":
-                if not token[i].isalpha():
-                    return False
-                stage = 4
-            # stage = 4
-            if not token[i].float() or token[i].isalnum():
-                return False
-            stage = 4
         elif stage == 4:
-            if token[i] != ";":
+            if token != ",":
                 return False
-            stage = 0
-        else:
-            return False
+            stage = 1
     
     return True
 
@@ -72,32 +66,30 @@ def isFunctionDeclaration(tokens):
 
     for i, token in enumerate(tokens):
         if stage == 0:
-            if token[i] not in datatypes:
+            if token not in datatypes:
                 return False
             stage = 1
         elif stage == 1:
-            if not token[i].isidentifier() and token == "-":
+            if not token.isidentifier():
                 return False
             stage = 2
         elif stage == 2:
-            if token[i] == "(":
+            if token == "(":
                 if token[i] not in datatypes:
                     return False
             stage = 3
         elif stage == 3:
-            if token[i] != ",":
+            if token != ",":
                 return False
             stage = 0
         elif stage == 3:
-            if token[i] != ")":
+            if token != ")":
                 return False
             stage = 4           
         elif stage == 4:
-            if token[i] != ";":
+            if token != ";":
                 return False
             stage = 0
-        else:
-            return False
     
     return True
 
@@ -129,24 +121,3 @@ while testcases > 0:
                         print("INVALID FUNCTION DECLARATION")
 
     testcases -= 1
-
-# if __name__ == "__main__":
-#     main()
-
-# def get_type(string):
-#     if string in ["int", "char", "float", "double", "void"]:
-#         return 0
-#     elif string.isidentifier():
-#         return 1
-#     elif string == ",":
-#         return 2
-#     elif string == "=":
-#         return 3
-#     elif string == "(":
-#         return 4
-#     elif string == ")":
-#         return 5
-#     elif string == ";":
-#         return 6
-#     else:
-#         return None
