@@ -106,21 +106,24 @@ testcases = int(input())
 
 while testcases > 0:
     statement = input()
-    declarations = statement.split()
+    # Since statement will always contain the case in its first character, this gets it
+    case = int(statement[0])
+    # This splits the statement string by ';' then removes empty elements
+    # because sometimes it results in ['int x;', '']
+    declarations = [x for x in statement[2:].split(';') if x != '']
         
     for declaration in declarations:
         tokens = tokenize_input(declaration.strip())
 
         if tokens:
-            case = tokens[0]
-            if case == '1':
-                if isVariableDeclaration(tokens[1:]):
+            if case == 1:
+                if isVariableDeclaration(tokens):
                     print("VALID VARIABLE DECLARATION")
                 else:
                     print("INVALID VARIABLE DECLARATION")
             else:
-                if case == '2':
-                    if isFunctionDeclaration(tokens[1:]):
+                if case == 2:
+                    if isFunctionDeclaration(tokens):
                         print("VALID FUNCTION DECLARATION")
                     else:
                         print("INVALID FUNCTION DECLARATION")
