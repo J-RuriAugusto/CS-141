@@ -12,8 +12,8 @@
 }
 
 .modalContainer {
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 570px;
   border-radius: 12px;
   background-color: #fbf8f2;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -44,6 +44,8 @@
   border: none;
   font-size: 12px;
   cursor: pointer;
+  margin-right: -10px;
+  margin-top: -2px;
 }
 
 .modalContainer .body {

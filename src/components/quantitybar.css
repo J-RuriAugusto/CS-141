@@ -30,16 +30,13 @@
 }
   
 .button-quantity-container {
-  /* display: absolute;
-  text-align: center;
-  align-items: center; */
-  margin-top:-15px;
+  margin-top:-14px;
   display: flex;
   gap:20px;
   align-items: center;
   justify-content: center;
-  left: 30%;
-  position: fixed;
+  left: 38px;
+  z-index: 1;
 }
 
 
@@ -65,10 +62,7 @@
 }
   
 .quantity {
-  font-size: 20px;
   text-align: center;
-  /* padding-bottom:40px;
-*/
   position: absolute;
 
   font-size: 13px;
