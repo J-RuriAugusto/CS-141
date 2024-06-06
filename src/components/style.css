@@ -1,0 +1,1377 @@
+#start-test{
+  color: yellow;
+  background-color: transparent;
+  z-index: 9999;  
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+.background{
+  background-color: #bdbdb7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  user-select: none;
+  width: 100vw;
+  height: 10vh;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Ensure it covers other content */
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.spotlight1 {
+  position: absolute;
+  width: 40%;
+  top: 0;
+  left: 0;
+  user-select: none;
+  overflow: hidden; 
+}
+
+.spotlight2 {
+  position: absolute;
+  width: 40%;
+  top: 0;
+  left: 60%; 
+  overflow: hidden; 
+  user-select: none;
+}
+
+.navigation-bar {
+  display: flex;
+  width: 100%; /* Use 100% width to make it responsive */
+  height: 6vh;
+  top: 0;
+  background-color: #8e0204;
+  user-select: none;
+  position: absolute; /* Fixed position to stay at the top */
+  z-index: 1000; /* Ensure the navigation bar stays on top */
+  right: 0;
+}
+.navigation-bar .snackrifice-text {
+  position: relative;
+  top: 28%;
+  left: 10%;
+  transform: translateX(-50%); /* Adjust the position to perfectly center */
+  text-shadow: 0px 0px 100px #495867;
+  -webkit-text-stroke: 1px #1b3220;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 1.5vw;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.vending-machine .overlap-group-wrapper {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  width: 85%; /* Adjust as needed for responsiveness */
+  height: 90%; /* Adjust as needed for responsiveness */
+  z-index: 1; /* Ensure the .overlap-group-wrapper is behind other elements */
+}
+
+.vending-machine .title-section {
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  transform: translate(-50%, -50%);
+  top: 9%; /* Place the element 70% from the top of the viewport */
+  left: 50%;
+  z-index: 2; /* Ensure the .title-section is above the .overlap-group-wrapper */
+}
+
+.vending-machine .title {
+  width: 100%; /* Make the image fill the container width */
+  height: 90%;
+}
+
+.vending-machine .ellipse1 {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 32%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  animation: blink 0.5s infinite alternate;
+}
+
+.vending-machine .ellipse2 {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 64%;
+  left:50%;
+  background-color: #ecc8af;
+  border: 1px solid;
+  border-color: #ce796b;
+  box-shadow: 0px 4px 4px #00000040;
+  transform: translate(-50%, -50%);
+  animation: blink 0.5s infinite alternate;
+}
+
+.vending-machine .ellipse3 {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 95%;
+  left:50%;
+  background-color: #ecc8af;
+  border: 1px solid;
+  border-color: #ce796b;
+  box-shadow: 0px 4px 4px #00000040;
+  transform: translate(-50%, -50%);
+  animation: blink 0.5s infinite alternate;
+}
+
+.vending-machine .title-semicircle {
+  position: absolute;
+  width: 667px;
+  height: 164px;
+  top: 15px;
+  left: 23px;
+}
+
+.vending-machine .main-vending {
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    transform: translate(-50%, -50%);
+    top: 59%; 
+    left: 50%;
+    z-index: 2; 
+}
+.vending-machine .vending-shadow {
+  position: absolute;
+  width: 100%;
+  height: 97%;
+  top: 1.5%;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #000000;
+  filter: blur(8px);
+
+}
+
+.vending-machine .handle {
+  position: absolute;
+  width: 3%;
+  height:5%;
+  top: 0.5%;
+  left: 35%;
+  background-color: #7b5d4d;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.vending-machine .handle-2 {
+  position: absolute;
+  width: 3%;
+  height:5%;
+  top: 0.5%;
+  left: 60%;
+  background-color: #6d584d;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+
+.vending-machine .toe {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  top: 96%;
+  left: 20%;
+}
+
+.vending-machine .toe-kick {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  top: 96%;
+  left: 70%;
+}
+
+.vending-machine .yellow-vending {
+  position: absolute;
+  width: 95%;
+  height: 93%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fbbc5f;
+  border-radius: 30px;
+  border: 1px solid #b68740;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-blend-mode: multiply;
+}
+
+.vending-machine .inside {
+  position: absolute;
+  width: 23%;
+  height: 64%;
+  top: 9%;
+  left: 72%;
+  background-color: #fefefe;
+  border-radius: 15px;
+  filter: blur(6px);
+}
+
+.vending-machine .inside-black {
+  position: absolute;
+  width: 23%;
+  height: 65%;
+  top: 10%;
+  left: 74%;
+  background-color: #444242;
+  border-radius: 15px;
+  filter: blur(7px);
+  
+}
+.vending-machine .inside-red {
+  position: absolute;
+  width: 23%;
+  height: 62%;
+  top: 10%;
+  left: 72%;
+  background-color: #8e0103;
+  border-radius: 15px;
+  border: 1px solid;
+  border-color: #5f0102;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.vending-machine .choose-section {
+  position: absolute;
+  width: 23%;
+  height: 64%;
+  top: 9%;
+  left: 72%;
+}
+
+.vending-machine .screen-section {
+  position: absolute;
+  width: 120%;
+  height: 40%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* .vending-machine .start-button {
+  box-sizing: border-box;
+  position: relative;
+  width: 85%;
+  height: 13%;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;    
+} */
+
+.start-button-new{
+  box-sizing: border-box;
+  position: relative;
+  width: 85%;
+  height: 13%;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 999;
+}
+
+.vending-machine .button-white{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 65%;
+  left: 50%;
+  background-color: #fefefe;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.vending-machine .button-yellow {
+  position: absolute;
+  width: 83%;
+  height: 98%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid;
+  border-color: #c58628;
+  box-shadow: 0px 0px 30px #e9a721;
+  background: linear-gradient(180deg, rgb(252, 171, 51) 0%, rgb(251, 188, 95) 100%);
+  /* z-index: 950; */
+}
+
+.vending-machine .start-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 4%;
+  left: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 70px #00000040;
+  -webkit-text-stroke: 1px #9d2709;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  color: #97270a;
+  font-size: 15px;
+  letter-spacing: 0em;
+  line-height: normal;
+  z-index: 999;
+}
+
+.vending-machine .start-text {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  top: 0; 
+  left: 0; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 70px #00000040;
+  -webkit-text-stroke: 1px #9d2709;
+  color: #ec3f13;
+  font-size: 15.4px;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.00em;
+  z-index: 999;
+}
+
+/* .vending-machine .cancel-button {
+  box-sizing: border-box;
+  position: relative;
+  width: 85%;
+  height: 13%;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+
+.cancel-button-new{
+  box-sizing: border-box;
+  position: relative;
+  width: 85%;
+  height: 13%;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+
+.vending-machine .cancel-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  top: 4%; 
+  left: 1%; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 4px 100px #00000040;
+  -webkit-text-stroke: 1px #5e0102;
+  color: #440202;
+  font-size: 13.6px;
+  position: absolute;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  letter-spacing: 0.1em; 
+  line-height: normal;
+}
+
+.vending-machine .cancel-text {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  top: 0; 
+  left: 0; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 4px 100px #00000040;
+  -webkit-text-stroke: 1px #5e0102;
+  color: #8e0103;
+  font-size: 13.4px;
+  letter-spacing: 2.4px;
+  position: absolute;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.1em; 
+  line-height: normal;
+}
+
+.finish-button {
+  box-sizing: border-box;
+  position: relative;
+  width: 85%;
+  height: 13%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.vending-machine .finish-shadow {
+  text-shadow: 0px 0px 100px #00000040;
+  -webkit-text-stroke: 1px #1f3924;
+  color: #1a321f;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  top: 3%; 
+  left: 1%; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-size: 13.5px;
+  letter-spacing: 2.4px;
+  position: absolute;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.1em; 
+  line-height: normal;
+}
+
+.vending-machine .finish-text {
+  text-shadow: 0px 0px 100px #00000040;
+  -webkit-text-stroke: 1px #1f3924;
+  color: #386641;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  top: 0; 
+  left: 0; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  font-size: 13.5px;
+  letter-spacing: 2.4px;
+  position: absolute;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.1em; 
+  line-height: normal;
+}
+
+.vending-machine .food-section {
+  position: absolute;
+  width: 63%;
+  height: 65%;
+  top: 8%;
+  left: 7%;
+}
+
+.vending-machine .inside_shadow2 {
+  position: absolute;
+  width: 98%;
+  height: 99%;
+  top: 51%;
+  left: 50%;
+  background-color: #fefefe;
+  border-radius: 15px;
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+}
+
+.vending-machine .inside_black2 {
+  position: absolute;
+  width: 98%;
+  height: 98%;
+  top: 54%;
+  left: 51.5%;
+  background-color: #343131;
+  border-radius: 15px;
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+}
+.vending-machine .redbox {
+  position: absolute; /* Ensure it is positioned absolutely within the parent */
+  width: 95%;
+  height: 97%;
+  background-color: #8e0103;
+  border-radius: 15px;
+  border: 1px solid #5f0102;
+  box-shadow: 0px 4px 4px #00000040;
+  left: 50%; /* Adjust the value to move it further right */
+  top: 51%;
+  transform: translate(-50%, -50%);
+}
+
+
+.vending-machine .division {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 32%;
+  left:50%;
+  background-color: #ecc8af;
+  border: 1px solid;
+  border-color: #ce796b;
+  box-shadow: 0px 4px 4px #00000040;
+  transform: translate(-50%, -50%);
+
+}
+.vending-machine .snacks-section {
+  position: absolute;
+  width: 96%;
+  height: 40%;
+  top: 65%;
+  left: 2%;
+  overflow: hidden;
+}
+
+.vending-machine .overlap-6 {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
+
+.vending-machine .stand-1 {
+  top: 23%;
+  left: 8.5%;
+}
+
+
+.vending-machine .stand-2 {
+  top: 23%;
+  left: 34%;
+}
+
+.vending-machine .stand-3 {
+  top: 23%;
+  left: 37%;
+ }
+
+.vending-machine .stand-4 {
+  top: 23%;
+  left: 63%;
+  }
+
+.vending-machine .stand-5 {
+  top: 23%;
+  left: 66%;
+  }
+
+
+.vending-machine .stand-6 {
+  top: 23%;
+  left: 91.5%;
+ }
+
+   
+.vending-machine .stand-7 {
+  top: 55%;
+  left: 8.5%;
+ }
+
+.vending-machine .stand-8 {
+  top: 55%;
+  left: 34%;
+ }
+
+   
+.vending-machine .stand-9 {
+  top: 55%;
+  left: 37%
+  }
+
+.vending-machine .stand-10 {
+  top: 55%;
+  left: 63%;
+ }
+
+.vending-machine .stand-11 {
+  top: 55%;
+  left: 66%;
+  }
+
+.vending-machine .stand-12 {
+  top: 55%;
+  left: 91.5%;
+  }
+
+.vending-machine .stand-13 {
+  top: 86%;
+  left: 8.5%;
+ }
+
+.vending-machine .stand-14 {
+  top: 86%;
+  left: 34%;
+ }
+
+.vending-machine .stand-15 {
+  top: 86%;
+  left: 37%;
+  }
+
+.vending-machine .stand-16 {
+  top: 86%;
+  left: 63%;
+}
+
+.vending-machine .stand-17 {
+  top: 86%;
+  left: 66%;
+}
+
+.vending-machine .stand-18 {
+  top: 86%;
+  left: 91.5%;
+}
+
+.vending-machine .stand{
+  position: absolute;
+  width: 1.2%;
+  height: 15%;
+  background-color: #817b7b;
+  border: 1px solid;
+  border-color: #6a6464;
+  transform: translate(-50%, -50%);
+}
+
+
+.vending-machine .category-text-shadow {
+  position: absolute;
+  width: 50%;
+  top: 16%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Nico Moji-Regular", Helvetica;
+  font-weight: 400;
+  color: #90611c;
+  font-size: 205%;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.vending-machine .category-text {
+  color: #f9aa34;
+  position: absolute;
+  width: 50%;
+  top: 14%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Nico Moji-Regular", Helvetica;
+  font-weight: 400;
+  font-size: 205%;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.vending-machine .empanada-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 35%;
+}
+
+.vending-machine .overlap-first {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vending-machine .shadow-food {
+  position: absolute;
+  width: 80%; 
+  height: 100%; 
+  top: 58%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .empanada {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 60%; 
+  max-height: 40%; 
+  top: 51%;
+  left: 40%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .empanada-2 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 60%; 
+  max-height: 40%; 
+  top: 57%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .empanada-3 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 60%; 
+  max-height: 40%; 
+  top: 65%;
+  left: 62%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .button-green {
+  position: absolute;
+  z-index: 1;
+  width: 85%;
+  height: 25%;
+  background-color: #386641;
+  border-radius: 40px;
+  border: 1px solid #24432a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  font-size: 30%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px; 
+  text-decoration: none;
+  top: 87%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.food-text {
+  position: absolute;
+  z-index: 10; 
+  top: 50%;
+  left: 50%;
+  text-shadow: 0px 4px 4px #00000040;
+  -webkit-text-stroke: 0.5px #2b2b2b;
+  font-family: "Press Start 2P", Helvetica;
+  font-weight: 500;
+  color: #fefefe;
+  letter-spacing: 3%;
+  line-height: normal;
+  transform: translate(-50%, -50%);
+  font-size: 300%;
+}
+
+.vending-machine .quick2-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 65%;
+}
+
+.vending-machine .overlap-last {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.vending-machine .quick {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 85%; 
+  max-height: 85%; 
+  top: 48%;
+  left: 41%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .quick-x {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 85%; 
+  max-height: 85%; 
+  top: 52%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .quick-2 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 85%; 
+  max-height: 85%; 
+  top: 60%;
+  left: 57%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.vending-machine .sandwich-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 5%;
+}
+
+.vending-machine .overlap-first {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.vending-machine .sandwich {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 50%; 
+  max-height: 50%; 
+  top: 44%;
+  left: 41%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sandwich-2 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 50%; 
+  max-height: 50%; 
+  top: 49%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sandwich-3 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 50%; 
+  max-height: 50%; 
+  top: 55%;
+  left: 57%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .rice-meals-section {
+  position: absolute;
+  width: 96%;
+  height: 32%;
+  top: 2%;
+  left: 2%;
+  overflow: hidden;
+}
+
+.vending-machine .overlap-16 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.vending-machine .division-2 {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 64%;
+  left:50%;
+  background-color: #ecc8af;
+  border: 1px solid;
+  border-color: #ce796b;
+  box-shadow: 0px 4px 4px #00000040;
+  transform: translate(-50%, -50%);
+
+}
+
+.vending-machine .pastil-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 5%;
+}
+
+.vending-machine .pastil {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 50%; 
+  max-height: 50%; 
+  top: 40%;
+  left: 41%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.vending-machine .pastil-image {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 50%; 
+  max-height: 50%; 
+  top: 47%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .pastil-2 {
+  position: absolute;
+  width: auto; 
+  height: 88px; 
+  max-width: 65%;
+  top: 59%;
+  left: 60%; 
+  transform: translate(-50%, -50%); 
+  padding-bottom: 15px;
+}
+
+.vending-machine .sisig-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 35%;
+}
+
+
+.vending-machine .sisig-silog {
+  position: absolute;
+  width: 40%; 
+  height: auto; 
+  max-width: 80%; 
+  max-height: 55%; 
+  top: 57%;
+  left: 45%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sisig-silog-2 {
+  position: absolute;
+  width: 40%; 
+  height: auto; 
+  max-width: 80%; 
+  max-height: 55%; 
+  top: 57%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sisig-silog-3 {
+  position: absolute;
+  width: 40%; 
+  height: auto; 
+  max-width: 80%; 
+  max-height: 55%; 
+  top: 60%;
+  left: 55%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sinuglaw-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 65%;
+}
+
+
+.vending-machine .sinuglaw {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 65%; 
+  max-height: 50%; 
+  top: 40%;
+  left: 39%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.vending-machine .sinuglaw-image {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 65%; 
+  max-height: 50%; 
+  top: 45%;
+  left: 48%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .sinuglaw-2 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 65%; 
+  max-height: 50%; 
+  top: 50%;
+  left: 57%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .drinks-section {
+  position: absolute;
+  width: 96%;
+  height: 33%;
+  top: 33%;
+  left: 2%;
+  overflow: hidden;
+}
+
+.vending-machine .overlap-20 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.vending-machine .division-3 {
+  position: absolute;
+  width: 95%;
+  height: 3%;
+  top: 95%;
+  left:50%;
+  background-color: #ecc8af;
+  border: 1px solid;
+  border-color: #ce796b;
+  box-shadow: 0px 4px 4px #00000040;
+  transform: translate(-50%, -50%);
+}
+
+.vending-machine .drinks-shadow {
+  position: absolute;
+  width: 150px;
+  top: 5px;
+  left: 283px;
+  text-shadow: 0px 4px 4px #00000040;
+  font-family: "Nico Moji-Regular", Helvetica;
+  font-weight: 400;
+  color: #744f17;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.vending-machine .cobra-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 65%;
+}
+
+
+.vending-machine .cobra {
+  position: absolute;
+  width: 30%; 
+  height: 55%; 
+  max-width: 80%; 
+  max-height: 60%; 
+  top: 43%;
+  left: 42%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .cobra-2 {
+  position: absolute;
+  width: 30%; 
+  height: 55%; 
+  max-width: 80%; 
+  max-height: 60%; 
+  top: 48%;
+  left: 51%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .cobra-3 {
+  position: absolute;
+  width: 30%; 
+  height: 55%; 
+  max-width: 80%; 
+  max-height: 60%; 
+  top: 53%;
+  left: 60%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .donmac-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 35%;
+}
+
+
+.vending-machine .don-mac {
+  position: absolute;
+  width: 20%; 
+  height: 45%; 
+  max-width: 80%; 
+  max-height: 60%; 
+  top: 48%;
+  left: 42%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .don-mac-image {
+  position: absolute;
+  width: 20%; 
+  height: 49%; 
+  max-width: 80%; 
+  top: 50%;
+  left: 49%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .don-mac-2 {
+  position: absolute;
+  width: 22%; 
+  height: 45%; 
+  max-width: 80%; 
+  max-height: 60%; 
+  top: 54%;
+  left: 59%; 
+  transform: translate(-50%, -50%); 
+}
+
+
+.vending-machine .tastickles-section {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  top: 0;
+  left: 5%;
+}
+
+.vending-machine .tastickles {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 100%; 
+  max-height: 60%; 
+  top: 40%;
+  left: 39%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .tastickles-2 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 100%; 
+  max-height: 60%; 
+  top: 45%;
+  left: 48%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .tastickles-3 {
+  position: absolute;
+  width: auto; 
+  height: auto; 
+  max-width: 100%; 
+  max-height: 60%; 
+  top: 50%;
+  left: 57%; 
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .glass-shadow-vm {
+  position: relative;
+  width: 120%;
+  height: 60%;
+  top: 38%;
+  left: 35%;
+  transform: translate(-50%, -50%); 
+}
+
+.vending-machine .inside_black3 {
+  position: absolute;
+  width: 65%;
+  height: 18%;
+  top: 86%;
+  left: 40%;
+  background-color: #343131;
+  border-radius: 20px;
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+  }
+
+  .vending-machine .inside_shadow3 {
+    position: absolute;
+    width: 65%;
+    height: 18%;
+    top: 85%;
+    left: 39%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    filter: blur(4px);
+    transform: translate(-50%, -50%);
+    }
+
+.vending-machine .pick-up {
+  position: absolute;
+  width: 64%;
+  height: 17%;
+  top:85%;
+  left: 39%;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.vending-machine .design-side {
+  position: absolute;
+  width: 4%;
+  height: 80%;
+  top: 50%;
+  left: 4.5%;
+  transform: translate(-50%, -50%);
+}
+
+.vending-machine .overlap-24 {
+  position: relative;
+  width: 100%; 
+  height: 100%; 
+}
+
+.vending-machine .light-side {
+  position: absolute;
+  width: 80%; 
+  height: 100%; 
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  filter: blur(4px);
+  transform: translate(0, 0);
+}
+
+.vending-machine .red-side {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #b81702;
+}
+
+
+.vending-machine .flowers-2 {
+width: 15%;
+height: 20%;
+top: 88%;
+left: 92%;
+position: absolute;
+transform: translate(-50%, -50%); /* Centering within the parent */
+
+}
+
+.vending-machine .flowers-3 {
+width: 15%;
+height: 20%;
+top: 86%;
+left: 85%;
+position: absolute;
+transform: translate(-50%, -50%); /* Centering within the parent */
+
+}
+
+.vending-machine .flowers-4 {
+width: 15%;
+height: 20%;
+top: 89%;
+left: 80%;
+user-select: none;
+position: absolute;
+transform: translate(-50%, -50%); /* Centering within the parent */
+
+}
+
+/* General button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transition for smooth hover effect */
+}
+
+/* Hover effect */
+button:hover {
+  filter: brightness(1.2); /* Light up effect */
+}
+
+/* Animation effect */
+button:active {
+  transform: scale(0.); /* Slightly shrink the button */
+  transition: transform 0s ease; /* Fast transition for press animation */
+}
+
+/* Specific button styles for start, cancel, and finish buttons */
+.vending-machine .start-button-new:hover,
+.vending-machine .cancel-button-new:hover,
+.vending-machine .finish-button:hover {
+  filter: brightness(1.2); /* Light up effect */
+}
+
+/* .vending-machine .start-button-new:active,
+.vending-machine .cancel-button:active,
+.vending-machine .finish-button:active {
+  transform: scale(0); /* Slightly shrink the button 
+  transition: transform 0.1s ease; /* Fast transition for press animation 
+}  */
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Christine's Edits */
+#bottom {
+  position: left;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1; /* Optional: for visibility */
+  text-align: center; /* Optional: to center the text */
+  padding: 10px; /* Optional: to add some padding */
+}

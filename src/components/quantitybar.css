@@ -1,0 +1,86 @@
+.quantity-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 20%;
+  top: 25%;
+  left: 83.5%;
+  transform: translate(-50%, -50%);
+  gap: 10px; /* Adjust as needed */
+  position: fixed;
+  z-index: 9999;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 5%;
+  z-index: -1;
+}
+  
+.image-container {
+  margin-top:-12px;
+  text-align: center;
+  position: relative;
+  z-index: -1;
+}
+  
+.button-quantity-container {
+  /* display: absolute;
+  text-align: center;
+  align-items: center; */
+  margin-top:-15px;
+  display: flex;
+  gap:20px;
+  align-items: center;
+  justify-content: center;
+  left: 30%;
+  position: fixed;
+}
+
+
+  
+.name-container {
+  text-align: center;
+  font-family: "Press Start 2P", Helvetica;
+  margin-bottom: 6px;
+  /* color:#386641; */
+}
+  
+.quantity-bar-button {
+  height: 20px;
+  background-color: #386641;
+  border-radius: 50%;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 0 10px;
+  align-items: center;
+  display: flex;
+  margin-top: 6px;
+}
+  
+.quantity {
+  font-size: 20px;
+  text-align: center;
+  /* padding-bottom:40px;
+*/
+  position: absolute;
+
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #fff; /* White background */
+  /* padding: 5px; */
+  padding: 3px  5px;
+  width: 25px; /* Adjust width and height to make it a circle */
+  height: 25px;
+  border-radius: 50%; /* Make it circular */
+  color: #8e0103;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the text inside the circle */
+}
