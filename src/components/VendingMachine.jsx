@@ -91,9 +91,15 @@ const VendingMachine = () => {
     <div>
       {!started && (
         <div className={`overlay ${started ? 'hidden' : ''}`}>
-          <button className="startButton" onClick={startMachine}>
-            Start
-          </button>
+          <div className="start-button-new" onClick={startMachine}>
+                    {/* <span onClick={startMachine}> */}
+                      <span className="button-white">
+                        <span className="button-yellow"></span>
+                        <span className="start-shadow">start</span>
+                        <span className="start-text">start</span>
+                      </span>
+                    {/* </span> */}
+                  </div>
         </div>
       )}
       <div className="navigation-bar">
