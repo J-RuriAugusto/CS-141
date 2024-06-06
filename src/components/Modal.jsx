@@ -3,12 +3,16 @@ import ModalOrderList from "./ModalOrderList";
 import "./Modal.css";
 
 function Modal({ setOpenModal, orders, clearOrder }) {
+  const buttonSound = new Audio("./src/assets/components/buttonTwo.mp3");
+
   return (
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
           <button
             onClick={() => {
+              buttonSound.play();
+              clearOrder();
               setOpenModal(false);
             }}
           >
@@ -25,6 +29,7 @@ function Modal({ setOpenModal, orders, clearOrder }) {
         <div className="footer">
           <button
             onClick={() => {
+              buttonSound.play();
               setOpenModal(false);
             }}
             id="editBtn"
@@ -33,6 +38,7 @@ function Modal({ setOpenModal, orders, clearOrder }) {
           </button>
           <button 
             onClick={() => {
+              buttonSound.play();
               clearOrder();
               setOpenModal(false);
             }}

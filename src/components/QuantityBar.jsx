@@ -2,15 +2,18 @@ import React from "react";
 import "./quantitybar.css";
 
 const QuantityBar = ({ orders, current, adjustQuantity, removeItem }) => {
+  let buttonSound = new Audio("./src/assets/components/buttonThree.mp3");
   const currentItem = orders.find((item) => item.name === current);
 
   const handleIncrease = () => {
+    buttonSound.play();
     if (currentItem) {
       adjustQuantity(currentItem.name, currentItem.quantity + 1);
     }
   };
 
   const handleDecrease = () => {
+    buttonSound.play();
     if (currentItem && currentItem.quantity > 1) {
       adjustQuantity(currentItem.name, currentItem.quantity - 1);
     } else {

@@ -11,6 +11,7 @@ const VendingMachine = () => {
   const [started, setStarted] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [current, setCurrent] = useState(null);
+  const clickSound = new Audio("./src/assets/buttonThree.mp3");
   // const bgMusic = new Audio("./src/assets/bgAudio.mp3"); // Initialize the audio object
 
   // useEffect(() => {
@@ -29,9 +30,8 @@ const VendingMachine = () => {
   //   };
   // }, [started, bgMusic]);
 
-  // let soundClick = new Audio("./src/assets/clickSound.mp3");
-
   const startMachine = () => {
+    clickSound.play();
     setStarted(true);
     console.log("Start Machine");
   };
@@ -41,6 +41,7 @@ const VendingMachine = () => {
   };
 
   const handleFoodButtonClick = (name, image) => {
+    clickSound.play();
     addOrder(name, image);
     clickOrder(name);
   };
@@ -74,11 +75,13 @@ const VendingMachine = () => {
 
   const clearOrder = () => {
     console.log("Cleared Order");
+    clickSound.play();
     setOrder([]);
     setStarted(false);
   };
 
   const doneOrder = () => {
+    clickSound.play();
     if (order.every((item) => item.quantity > 0)) {
       console.log(order);
     }
@@ -91,16 +94,16 @@ const VendingMachine = () => {
       !order.some((item) => item.quantity === 0)
     ) {
       doneOrder();
+      clickSound.play();
       setModalOpen(true);
     }
   };
 
-  const handleClickSound = () => {
-    const clickSound = new Audio("./src/assets/buttonThree.mp3");
-    clickSound.play();
-    startMachine();
-
-  };
+  // const handleClickStart = () => {
+  //   const clickSound = new Audio("./src/assets/buttonThree.mp3");
+  //   clickSound.play();
+  //   startMachine();
+  // };
 
   const adjustQuantity = (name, newQuantity) => {
     setOrder((prevOrder) =>
@@ -118,7 +121,7 @@ const VendingMachine = () => {
     <div>
       {!started && (
         <div className={`overlay ${started ? 'hidden' : ''}`}>
-          <div className="start-button-new" onClick={handleClickSound}>
+          <div className="start-button-new" onClick={startMachine}>
                     {/* <span onClick={startMachine}> */}
                       <span className="button-white">
                         <span className="button-yellow"></span>
