@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import QuantityBar from "./QuantityBar";
 import OrderList from "./OrderList";
 import Modal from "./Modal";
+// import clickSound from "./clickSound";
 import "./style.css";
 import "./global.css";
 
@@ -10,6 +11,25 @@ const VendingMachine = () => {
   const [started, setStarted] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [current, setCurrent] = useState(null);
+  // const bgMusic = new Audio("./src/assets/bgAudio.mp3"); // Initialize the audio object
+
+  // useEffect(() => {
+  //   if (started) {
+  //     bgMusic.play();
+  //     bgMusic.loop = true; // Loop the background music
+  //   } else {
+  //     bgMusic.pause();
+  //     bgMusic.currentTime = 0; // Reset the music to start
+  //   }
+
+  //   // Cleanup function to pause the music when the component unmounts
+  //   return () => {
+  //     bgMusic.pause();
+  //     bgMusic.currentTime = 0;
+  //   };
+  // }, [started, bgMusic]);
+
+  // let soundClick = new Audio("./src/assets/clickSound.mp3");
 
   const startMachine = () => {
     setStarted(true);
@@ -75,6 +95,13 @@ const VendingMachine = () => {
     }
   };
 
+  const handleClickSound = () => {
+    const clickSound = new Audio("./src/assets/buttonThree.mp3");
+    clickSound.play();
+    startMachine();
+
+  };
+
   const adjustQuantity = (name, newQuantity) => {
     setOrder((prevOrder) =>
       prevOrder.map((item) =>
@@ -91,7 +118,7 @@ const VendingMachine = () => {
     <div>
       {!started && (
         <div className={`overlay ${started ? 'hidden' : ''}`}>
-          <div className="start-button-new" onClick={startMachine}>
+          <div className="start-button-new" onClick={handleClickSound}>
                     {/* <span onClick={startMachine}> */}
                       <span className="button-white">
                         <span className="button-yellow"></span>
