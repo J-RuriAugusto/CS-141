@@ -30,22 +30,18 @@
 }
   
 .button-quantity-container {
-  margin-top:-14px;
+  margin-top:-12px;
   display: flex;
   gap:20px;
   align-items: center;
   justify-content: center;
-  left: 38px;
+  left: 36px;
   z-index: 1;
 }
-
-
   
 .name-container {
   text-align: center;
   font-family: "Press Start 2P", Helvetica;
-  margin-bottom: 6px;
-  /* color:#386641; */
 }
   
 .quantity-bar-button {
