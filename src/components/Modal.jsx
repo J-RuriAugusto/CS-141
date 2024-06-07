@@ -11,7 +11,6 @@ function Modal({ setOpenModal, orders, cancelOrder }) {
         <div className="titleCloseBtn">
           <button
             onClick={() => {
-              buttonSound.play();
               cancelOrder();
               setOpenModal(false);
             }}
@@ -38,7 +37,6 @@ function Modal({ setOpenModal, orders, cancelOrder }) {
           </button>
           <button 
             onClick={() => {
-              buttonSound.play();
               cancelOrder();
               setOpenModal(false);
             }}

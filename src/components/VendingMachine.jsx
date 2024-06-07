@@ -80,6 +80,7 @@ const VendingMachine = () => {
   };
 
   const adjustQuantity = (name, newQuantity) => {
+    clickSound.play();
     setOrder(
       (prevOrder) =>
         prevOrder.map(
