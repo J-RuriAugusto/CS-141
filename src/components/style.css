@@ -1,4 +1,4 @@
-#start-test{
+#start-test {
   color: yellow;
   background-color: transparent;
   z-index: 100;  
@@ -13,8 +13,7 @@ body, html {
   overflow-y: hidden;
 }
 
-
-.background{
+.background {
   background-color: #bdbdb7;
   display: flex;
   flex-direction: row;
@@ -30,11 +29,11 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;  /* Ensure it covers other content */
+  z-index: 1;
 }
 
 .overlay.hidden {
@@ -61,20 +60,21 @@ body, html {
 
 .navigation-bar {
   display: flex;
-  width: 100%; /* Use 100% width to make it responsive */
+  width: 100%;
   height: 6vh;
   top: 0;
   background-color: #8e0204;
   user-select: none;
-  position: absolute; /* Fixed position to stay at the top */
-  z-index: 1000; /* Ensure the navigation bar stays on top */
+  position: absolute;
+  z-index: 1000;
   right: 0;
 }
+
 .navigation-bar .snackrifice-text {
   position: relative;
   top: 28%;
   left: 10%;
-  transform: translateX(-50%); /* Adjust the position to perfectly center */
+  transform: translateX(-50%);
   text-shadow: 0px 0px 100px #495867;
   -webkit-text-stroke: 1px #1b3220;
   font-family: "Press Start 2P", Helvetica;
@@ -91,9 +91,8 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   user-select: none;
-  width: 85%; /* Adjust as needed for responsiveness */
-  height: 90%; /* Adjust as needed for responsiveness */
-  /*  z-index: 1; Ensure the .overlap-group-wrapper is behind other elements */
+  width: 85%;
+  height: 90%;
 }
 
 .vending-machine .title-section {
@@ -101,13 +100,13 @@ body, html {
   width: 50%;
   height: 20%;
   transform: translate(-50%, -50%);
-  top: 9%; /* Place the element 70% from the top of the viewport */
+  top: 9%;
   left: 50%;
-  z-index: 2; /* Ensure the .title-section is above the .overlap-group-wrapper */
+  z-index: 2;
 }
 
 .vending-machine .title {
-  width: 100%; /* Make the image fill the container width */
+  width: 100%;
   height: 90%;
 }
 
@@ -166,6 +165,7 @@ body, html {
     left: 50%;
     z-index: 2; 
 }
+
 .vending-machine .vending-shadow {
   position: absolute;
   width: 100%;
@@ -283,18 +283,7 @@ body, html {
   transform: translate(-50%, -50%);
 }
 
-/* .vending-machine .start-button {
-  box-sizing: border-box;
-  position: relative;
-  width: 85%;
-  height: 13%;
-  top: 54%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;    
-} */
-
-.start-button-new{
+.start-button-new {
   box-sizing: border-box;
   position: relative;
   width: 85%;
@@ -306,17 +295,7 @@ body, html {
   z-index: 9999;
 }
 
-
-
-
-
-
-
-
-
-
-
-.button-white{
+.button-white {
   position: absolute;
   width: 17.6%;
   height: 50%;
@@ -340,7 +319,6 @@ body, html {
   border-color: #c58628;
   box-shadow: 0px 0px 30px #e9a721;
   background: linear-gradient(180deg, rgb(252, 171, 51) 0%, rgb(251, 188, 95) 100%);
-  /* z-index: 950; */
 }
 
 .start-shadow {
@@ -383,18 +361,7 @@ body, html {
   z-index: 9999;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.vending-machine .button-white{
+.vending-machine .button-white {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -406,20 +373,7 @@ body, html {
   z-index: 9999;
 }
 
-
-
-/* .vending-machine .cancel-button {
-  box-sizing: border-box;
-  position: relative;
-  width: 85%;
-  height: 13%;
-  top: 57%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-
-.cancel-button-new{
+.cancel-button-new {
   box-sizing: border-box;
   position: relative;
   width: 85%;
@@ -429,7 +383,6 @@ body, html {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-
 
 .vending-machine .cancel-shadow {
   position: absolute;
@@ -559,19 +512,19 @@ body, html {
   filter: blur(4px);
   transform: translate(-50%, -50%);
 }
+
 .vending-machine .redbox {
-  position: absolute; /* Ensure it is positioned absolutely within the parent */
+  position: absolute;
   width: 95%;
   height: 97%;
   background-color: #8e0103;
   border-radius: 15px;
   border: 1px solid #5f0102;
   box-shadow: 0px 4px 4px #00000040;
-  left: 50%; /* Adjust the value to move it further right */
+  left: 50%;
   top: 51%;
   transform: translate(-50%, -50%);
 }
-
 
 .vending-machine .division {
   position: absolute;
@@ -586,6 +539,7 @@ body, html {
   transform: translate(-50%, -50%);
 
 }
+
 .vending-machine .snacks-section {
   position: absolute;
   width: 96%;
@@ -606,7 +560,6 @@ body, html {
   left: 8.5%;
 }
 
-
 .vending-machine .stand-2 {
   top: 23%;
   left: 34%;
@@ -615,70 +568,67 @@ body, html {
 .vending-machine .stand-3 {
   top: 23%;
   left: 37%;
- }
+}
 
 .vending-machine .stand-4 {
   top: 23%;
   left: 63%;
-  }
+}
 
 .vending-machine .stand-5 {
   top: 23%;
   left: 66%;
-  }
-
+}
 
 .vending-machine .stand-6 {
   top: 23%;
   left: 91.5%;
- }
+}
 
-   
 .vending-machine .stand-7 {
   top: 55%;
   left: 8.5%;
- }
+}
 
 .vending-machine .stand-8 {
   top: 55%;
   left: 34%;
- }
-
+}
    
 .vending-machine .stand-9 {
   top: 55%;
   left: 37%
-  }
+}
 
 .vending-machine .stand-10 {
   top: 55%;
   left: 63%;
- }
+}
 
 .vending-machine .stand-11 {
   top: 55%;
   left: 66%;
-  }
+}
 
 .vending-machine .stand-12 {
   top: 55%;
   left: 91.5%;
-  }
+}
 
 .vending-machine .stand-13 {
   top: 86%;
   left: 8.5%;
- }
+}
 
 .vending-machine .stand-14 {
   top: 86%;
   left: 34%;
- }
+}
 
 .vending-machine .stand-15 {
   top: 86%;
   left: 37%;
-  }
+}
 
 .vending-machine .stand-16 {
   top: 86%;
@@ -704,7 +654,6 @@ body, html {
   border-color: #6a6464;
   transform: translate(-50%, -50%);
 }
-
 
 .vending-machine .category-text-shadow {
   position: absolute;
@@ -842,6 +791,7 @@ body, html {
   width: 100%;
   height: 100%;
 }
+
 .vending-machine .quick {
   position: absolute;
   width: auto; 
@@ -875,7 +825,6 @@ body, html {
   transform: translate(-50%, -50%); 
 }
 
-
 .vending-machine .sandwich-section {
   position: absolute;
   width: 30%;
@@ -889,7 +838,6 @@ body, html {
   width: 100%;
   height: 100%;
 }
-
 
 .vending-machine .sandwich {
   position: absolute;
@@ -972,7 +920,6 @@ body, html {
   transform: translate(-50%, -50%); 
 }
 
-
 .vending-machine .pastil-image {
   position: absolute;
   width: auto; 
@@ -1002,7 +949,6 @@ body, html {
   top: 0;
   left: 35%;
 }
-
 
 .vending-machine .sisig-silog {
   position: absolute;
@@ -1045,7 +991,6 @@ body, html {
   left: 65%;
 }
 
-
 .vending-machine .sinuglaw {
   position: absolute;
   width: auto; 
@@ -1056,7 +1001,6 @@ body, html {
   left: 39%; 
   transform: translate(-50%, -50%); 
 }
-
 
 .vending-machine .sinuglaw-image {
   position: absolute;
@@ -1095,7 +1039,6 @@ body, html {
   height: 100%;
 }
 
-
 .vending-machine .division-3 {
   position: absolute;
   width: 95%;
@@ -1130,7 +1073,6 @@ body, html {
   top: 0;
   left: 65%;
 }
-
 
 .vending-machine .cobra {
   position: absolute;
@@ -1173,7 +1115,6 @@ body, html {
   left: 35%;
 }
 
-
 .vending-machine .don-mac {
   position: absolute;
   width: 20%; 
@@ -1205,7 +1146,6 @@ body, html {
   left: 59%; 
   transform: translate(-50%, -50%); 
 }
-
 
 .vending-machine .tastickles-section {
   position: absolute;
@@ -1269,17 +1209,17 @@ body, html {
   transform: translate(-50%, -50%);
   }
 
-  .vending-machine .inside_shadow3 {
-    position: absolute;
-    width: 65%;
-    height: 18%;
-    top: 85%;
-    left: 39%;
-    background-color: #ffffff;
-    border-radius: 20px;
-    filter: blur(4px);
-    transform: translate(-50%, -50%);
-    }
+.vending-machine .inside_shadow3 {
+  position: absolute;
+  width: 65%;
+  height: 18%;
+  top: 85%;
+  left: 39%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+  }
 
 .vending-machine .pick-up {
   position: absolute;
@@ -1326,36 +1266,32 @@ body, html {
   background-color: #b81702;
 }
 
-
 .vending-machine .flowers-2 {
 width: 15%;
 height: 20%;
 top: 88%;
 left: 92%;
 position: absolute;
-transform: translate(-50%, -50%); /* Centering within the parent */
-
+transform: translate(-50%, -50%);
 }
 
 .vending-machine .flowers-3 {
-width: 15%;
-height: 20%;
-top: 86%;
-left: 85%;
-position: absolute;
-transform: translate(-50%, -50%); /* Centering within the parent */
-
+  width: 15%;
+  height: 20%;
+  top: 86%;
+  left: 85%;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .vending-machine .flowers-4 {
-width: 15%;
-height: 20%;
-top: 89%;
-left: 80%;
-user-select: none;
-position: absolute;
-transform: translate(-50%, -50%); /* Centering within the parent */
-
+  width: 15%;
+  height: 20%;
+  top: 89%;
+  left: 80%;
+  user-select: none;
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 /* General button styles */
@@ -1364,33 +1300,26 @@ button {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transition for smooth hover effect */
+  transition: all 0.3s ease;
 }
 
 /* Hover effect */
 button:hover {
-  filter: brightness(1.2); /* Light up effect */
+  filter: brightness(1.2);
 }
 
 /* Animation effect */
 button:active {
-  transform: scale(0.); /* Slightly shrink the button */
-  transition: transform 0s ease; /* Fast transition for press animation */
+  transform: scale(0.);
+  transition: transform 0s ease;
 }
 
 /* Specific button styles for start, cancel, and finish buttons */
 .vending-machine .start-button-new:hover,
 .vending-machine .cancel-button-new:hover,
 .vending-machine .finish-button:hover {
-  filter: brightness(1.2); /* Light up effect */
+  filter: brightness(1.2);
 }
-
-/* .vending-machine .start-button-new:active,
-.vending-machine .cancel-button:active,
-.vending-machine .finish-button:active {
-  transform: scale(0); /* Slightly shrink the button 
-  transition: transform 0.1s ease; /* Fast transition for press animation 
-}  */
 
 @keyframes blink {
   0%, 100% {
@@ -1401,12 +1330,11 @@ button:active {
   }
 }
 
-/* Christine's Edits */
 #bottom {
   position: left;
   bottom: 0;
   width: 100%;
-  background-color: #f1f1f1; /* Optional: for visibility */
-  text-align: center; /* Optional: to center the text */
-  padding: 10px; /* Optional: to add some padding */
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
 }

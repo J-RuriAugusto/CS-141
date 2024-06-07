@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import QuantityBar from "./QuantityBar";
 import OrderList from "./OrderList";
 import Modal from "./Modal";
-// import clickSound from "./clickSound";
-import "./style.css";
 import "./global.css";
+import "./style.css";
+
 
 const VendingMachine = () => {
   const [order, setOrder] = useState([]);
@@ -12,23 +12,6 @@ const VendingMachine = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [current, setCurrent] = useState(null);
   const clickSound = new Audio("./src/assets/buttonThree.mp3");
-  // const bgMusic = new Audio("./src/assets/bgAudio.mp3"); // Initialize the audio object
-
-  // useEffect(() => {
-  //   if (started) {
-  //     bgMusic.play();
-  //     bgMusic.loop = true; // Loop the background music
-  //   } else {
-  //     bgMusic.pause();
-  //     bgMusic.currentTime = 0; // Reset the music to start
-  //   }
-
-  //   // Cleanup function to pause the music when the component unmounts
-  //   return () => {
-  //     bgMusic.pause();
-  //     bgMusic.currentTime = 0;
-  //   };
-  // }, [started, bgMusic]);
 
   const startMachine = () => {
     clickSound.play();
@@ -51,8 +34,8 @@ const VendingMachine = () => {
     const existingItem = order.find((item) => item.name === name);
 
     if (existingItem) {
-      const updatedOrder = order.map((item) =>
-        item.name === name ? { ...item, quantity: item.quantity + 1 } : item
+      const updatedOrder = order.map(
+        (item) => item.name === name ? { ...item, quantity: item.quantity + 1 } : item
       );
       setOrder(updatedOrder);
     } else {
@@ -64,16 +47,14 @@ const VendingMachine = () => {
     const existingItem = order.find((item) => item.name === name);
 
     if (existingItem) {
-      const updatedOrder = order
-        .map((item) =>
-          item.name === name ? { ...item, quantity: item.quantity - 1 } : item
-        )
-        .filter((item) => item.quantity > 0);
+      const updatedOrder = order.map(
+        (item) => item.name === name ? { ...item, quantity: item.quantity - 1 } : item
+      ).filter((item) => item.quantity > 0);
       setOrder(updatedOrder);
     }
   };
 
-  const clearOrder = () => {
+  const cancelOrder = () => {
     console.log("Cleared Order");
     clickSound.play();
     setOrder([]);
@@ -92,24 +73,18 @@ const VendingMachine = () => {
       started &&
       order.length > 0 &&
       !order.some((item) => item.quantity === 0)
-    ) {
-      doneOrder();
-      clickSound.play();
-      setModalOpen(true);
-    }
+    )
+    clickSound.play();
+    setModalOpen(true);
+    doneOrder();
   };
 
-  // const handleClickStart = () => {
-  //   const clickSound = new Audio("./src/assets/buttonThree.mp3");
-  //   clickSound.play();
-  //   startMachine();
-  // };
-
   const adjustQuantity = (name, newQuantity) => {
-    setOrder((prevOrder) =>
-      prevOrder.map((item) =>
-        item.name === name ? { ...item, quantity: newQuantity } : item
-      )
+    setOrder(
+      (prevOrder) =>
+        prevOrder.map(
+          (item) => item.name === name ? { ...item, quantity: newQuantity } : item
+        )
     );
   };
 
@@ -122,16 +97,15 @@ const VendingMachine = () => {
       {!started && (
         <div className={`overlay ${started ? 'hidden' : ''}`}>
           <div className="start-button-new" onClick={startMachine}>
-                    {/* <span onClick={startMachine}> */}
-                      <span className="button-white">
-                        <span className="button-yellow"></span>
-                        <span className="start-shadow">start</span>
-                        <span className="start-text">start</span>
-                      </span>
-                    {/* </span> */}
-                  </div>
+              <span className="button-white">
+                <span className="button-yellow"></span>
+                <span className="start-shadow">start</span>
+                <span className="start-text">start</span>
+              </span>
+          </div>
         </div>
       )}
+      
       <div className="navigation-bar">
         <div className="snackrifice-text">Snackrifice</div>
       </div>
@@ -166,7 +140,6 @@ const VendingMachine = () => {
             </div>
 
             <div className="choose-section">
-              {/* <QuantityBar orders={order} current={current} /> */}
               <QuantityBar
                 orders={order}
                 current={current}
@@ -174,22 +147,15 @@ const VendingMachine = () => {
                 removeItem={removeItem}
               />
               <img className="screen-section" src="img/screen-section.svg" />
-              
-              {/* {!started && (
-                <div className={`overlay ${started ? 'hidden' : ''}`}> */}
-                  <div className="start-button-new" onClick={startMachine}>
-                    {/* <span onClick={startMachine}> */}
-                      <span className="button-white">
-                        <span className="button-yellow"></span>
-                        <span className="start-shadow">start</span>
-                        <span className="start-text">start</span>
-                      </span>
-                    {/* </span> */}
-                  </div>
-                {/* </div>
-              )} */}
+              <div className="start-button-new" onClick={startMachine}>
+                  <span className="button-white">
+                    <span className="button-yellow"></span>
+                    <span className="start-shadow">start</span>
+                    <span className="start-text">start</span>
+                  </span>
+              </div>
               <div className="cancel-button-new">
-                <span onClick={clearOrder} disabled={!started}>
+                <span onClick={cancelOrder} disabled={!started}>
                   <div className="button-white">
                     <div className="button-yellow"></div>
                     <div className="cancel-shadow">cancel</div>
@@ -249,10 +215,7 @@ const VendingMachine = () => {
                 <div className="overlap-6">
                   <div className="empanada-section">
                     <div className="overlap-middle">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodep.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodep.svg" />
                       <img className="empanada" src="img/empanada-2.png" />
                       <img className="empanada-2" src="img/empanada-2.png" />
                       <img className="empanada-3" src="img/empanada-2.png" />
@@ -272,10 +235,7 @@ const VendingMachine = () => {
                   </div>
                   <div className="quick2-section">
                     <div className="overlap-last">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodqk.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodqk.svg" />
                       <img className="quick" src="img/quick-2x.png" />
                       <img className="quick-x" src="img/quick2x-1.png" />
                       <img className="quick-2" src="img/quick2x-2.png" />
@@ -295,10 +255,7 @@ const VendingMachine = () => {
                   </div>
                   <div className="sandwich-section">
                     <div className="overlap-first">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodsw.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodsw.svg" />
                       <img className="sandwich" src="img/sandwich-2.png" />
                       <img className="sandwich-2" src="img/sandwich-2.png" />
                       <img className="sandwich-3" src="img/sandwich-2.png" />
@@ -324,15 +281,9 @@ const VendingMachine = () => {
                   <div className="category-text">Rice Meals</div>
                   <div className="pastil-section">
                     <div className="overlap-first">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodpt.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodpt.svg" />
                       <img className="pastil" src="img/pastil.png" />
-                      <img
-                        className="pastil-image"
-                        src="img/pastil.png"
-                      />
+                      <img className="pastil-image" src="img/pastil.png" />
                       <img className="pastil-2" src="img/pastil.png" />
                       <button
                         className="button-green"
@@ -350,22 +301,10 @@ const VendingMachine = () => {
                   </div>
                   <div className="sisig-section">
                     <div className="overlap-middle">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodss.svg"
-                      />
-                      <img
-                        className="sisig-silog"
-                        src="img/sisig-silog-2.png"
-                      />
-                      <img
-                        className="sisig-silog-2"
-                        src="img/sisig-silog-3.png"
-                      />
-                      <img
-                        className="sisig-silog-3"
-                        src="img/sisig-silog-4.png"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodss.svg" />
+                      <img className="sisig-silog" src="img/sisig-silog-2.png" />
+                      <img className="sisig-silog-2" src="img/sisig-silog-3.png" />
+                      <img className="sisig-silog-3" src="img/sisig-silog-4.png" />
                       <button
                         className="button-green"
                         onClick={() =>
@@ -382,19 +321,10 @@ const VendingMachine = () => {
                   </div>
                   <div className="sinuglaw-section">
                     <div className="overlap-last">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodsin.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodsin.svg" />
                       <img className="sinuglaw" src="img/sinuglaw-image1.png" />
-                      <img
-                        className="sinuglaw-image"
-                        src="img/sinuglaw-image1.png"
-                      />
-                      <img
-                        className="sinuglaw-2"
-                        src="img/sinuglaw-image1.png"
-                      />
+                      <img className="sinuglaw-image" src="img/sinuglaw-image1.png" />
+                      <img className="sinuglaw-2" src="img/sinuglaw-image1.png" />
                       <button
                         className="button-green"
                         onClick={() =>
@@ -417,10 +347,7 @@ const VendingMachine = () => {
                   <div className="category-text">Drinks</div>
                   <div className="cobra-section">
                     <div className="overlap-last">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodcb.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodcb.svg" />
                       <button
                         className="button-green"
                         onClick={() =>
@@ -440,15 +367,9 @@ const VendingMachine = () => {
                   </div>
                   <div className="donmac-section">
                     <div className="overlap-middle">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-fooddm.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-fooddm.svg" />
                       <img className="don-mac" src="img/don-mac-image3.png" />
-                      <img
-                        className="don-mac-image"
-                        src="img/don-mac-image1.png"
-                      />
+                      <img className="don-mac-image" src="img/don-mac-image1.png" />
                       <img className="don-mac-2" src="img/don-mac-image1.png" />
                       <button
                         className="button-green"
@@ -466,19 +387,10 @@ const VendingMachine = () => {
                   </div>
                   <div className="tastickles-section">
                     <div className="overlap-first">
-                      <img
-                        className="shadow-food"
-                        src="img/shadow-foodts.svg"
-                      />
+                      <img className="shadow-food" src="img/shadow-foodts.svg" />
                       <img className="tastickles" src="img/tastickles-1.png" />
-                      <img
-                        className="tastickles-2"
-                        src="img/tastickles-1.png"
-                      />
-                      <img
-                        className="tastickles-3"
-                        src="img/tastickles-1.png"
-                      />
+                      <img className="tastickles-2" src="img/tastickles-1.png" />
+                      <img className="tastickles-3" src="img/tastickles-1.png" />
                       <button
                         className="button-green"
                         onClick={() =>
@@ -503,26 +415,20 @@ const VendingMachine = () => {
         </div>
       </div>
       <div className="order-section">
-        {/* <h2>Orders:</h2> */}
         <ul style={{ listStyleType: "none", padding: 0 }}>
           {order.map((item, index) => (
             <li key={index} style={{ marginBottom: "5px" }}>
-              {/* {item.name} - Quantity:  */}
               <button
                 onClick={() => subOrder(item.name)}
                 disabled={!started}
                 style={{ margin: "0 5px" }}
-              >
-                {/* - */}
-              </button>
-              {item.quantity}
+              ></button>
+                {item.quantity}
               <button
                 onClick={() => addOrder(item.name)}
                 disabled={!started}
                 style={{ margin: "0 5px" }}
-              >
-                {/* + */}
-              </button>
+              ></button>
             </li>
           ))}
         </ul>
@@ -534,12 +440,10 @@ const VendingMachine = () => {
           }}
         >
           <button
-            onClick={clearOrder}
+            onClick={cancelOrder}
             disabled={!started}
             style={{ margin: "0 10px" }}
-          >
-            {/* Cancel */}
-          </button>
+          ></button>
           <button
             onClick={doneOrder}
             disabled={
@@ -548,16 +452,14 @@ const VendingMachine = () => {
               order.some((item) => item.quantity === 0)
             }
             style={{ margin: "0 10px" }}
-          >
-            {/* Place Order */}
-          </button>
+          ></button>
         </div>
       </div>
       {modalOpen && (
         <Modal
           setOpenModal={setModalOpen}
           orders={order}
-          clearOrder={clearOrder}
+          cancelOrder={cancelOrder}
         />
       )}
     </div>

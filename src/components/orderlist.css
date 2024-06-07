@@ -1,14 +1,14 @@
 
 img {
   width: 95px;
-  margin-right: 10px; /* Add some space between the image and the quantity text */
+  margin-right: 10px;
 }
 .pick-up {
   position: absolute;
   width: 64%;
   height: 17%;
   top: 85%;
-  left: 50%; /* Center horizontally */
+  left: 50%;
   border-radius: 20px;
   transform: translate(-50%, -50%);
   display: flex;
@@ -19,26 +19,14 @@ img {
 
 .order-item {
   position: relative; /* This allows the quantity text to be positioned relative to the order-item */
-  margin-right: 20px; /* Add space between order items */
+  margin-right: 20px;
 }
 
 img {
   margin-left:10px;
   width: 85px;
-  margin-right: 10px; /* Add some space between the image and the quantity text */
+  margin-right: 10px;
 }
-
-/* #quantity-text {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-  border-radius: 5px;
-  color: #fff; 
-} */
 
 #quantity-text {
   margin-bottom: 10px;
@@ -48,24 +36,22 @@ img {
   right: 0;
   font-size: 13px;
   font-weight: bold;
-  background-color: #fff; /* White background */
-  /* padding: 5px; */
+  background-color: #fff;
   padding: 3px  5px;
-  width: 25px; /* Adjust width and height to make it a circle */
+  width: 25px;
   height: 25px;
-  border-radius: 50%; /* Make it circular */
+  border-radius: 50%;
   color: #8e0103;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center the text inside the circle */
+  align-items: center;
 }
 
-#pick-up-container{
+#pick-up-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   overflow-x: auto;
-
   padding-left: 30px;;
 }
 

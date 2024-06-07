@@ -2,7 +2,7 @@ import React from "react";
 import ModalOrderList from "./ModalOrderList";
 import "./Modal.css";
 
-function Modal({ setOpenModal, orders, clearOrder }) {
+function Modal({ setOpenModal, orders, cancelOrder }) {
   const buttonSound = new Audio("./src/assets/components/buttonTwo.mp3");
 
   return (
@@ -12,7 +12,7 @@ function Modal({ setOpenModal, orders, clearOrder }) {
           <button
             onClick={() => {
               buttonSound.play();
-              clearOrder();
+              cancelOrder();
               setOpenModal(false);
             }}
           >
@@ -29,8 +29,8 @@ function Modal({ setOpenModal, orders, clearOrder }) {
         <div className="footer">
           <button
             onClick={() => {
-              buttonSound.play();
               setOpenModal(false);
+              buttonSound.play();
             }}
             id="editBtn"
           >
@@ -39,7 +39,7 @@ function Modal({ setOpenModal, orders, clearOrder }) {
           <button 
             onClick={() => {
               buttonSound.play();
-              clearOrder();
+              cancelOrder();
               setOpenModal(false);
             }}
             id="doneBtn"
