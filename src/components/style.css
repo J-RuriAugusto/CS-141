@@ -659,7 +659,7 @@ body, html {
   position: absolute;
   width: 50%;
   top: 16%;
-  left: 65%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Nico Moji-Regular", Helvetica;
@@ -668,14 +668,16 @@ body, html {
   font-size: 205%;
   letter-spacing: 0;
   line-height: normal;
+  text-align: center;
 }
 
 .vending-machine .category-text {
   color: #f9aa34;
   position: absolute;
+  text-align: center;
   width: 50%;
   top: 14%;
-  left: 65%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0px 4px 4px #00000040;
   font-family: "Nico Moji-Regular", Helvetica;
